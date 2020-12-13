@@ -12,14 +12,12 @@ characters = [
 
 
 def get_password(minimum: int = 15, maximum: int = 20) -> str:
-    return "".join(secret.choice(characters) for _ in range(secret.randint(minimum,  maximum)))
+    length = secret.randint(minimum, maximum)
+    return "".join(secret.choice(characters) for _ in range(length))
 
 
 def get_passwords(amount: int) -> str:
-    passwords_l = []
-    for _ in range(amount):
-        passwords_l.append(get_password())
-    return "\n".join(passwords_l)
+    return "\n".join(get_password() for _ in range(amount))
 
 
 def save_password(passwords: str, path: str) -> None:
