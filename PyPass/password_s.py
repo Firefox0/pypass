@@ -11,8 +11,7 @@ def get_password(minimum: int = 15, maximum: int = 20) -> str:
     while True:
         password = "".join(secret.choice(characters) for _ in range(length))
         if meets_basic_requirements(password):
-            break
-    return password
+            return password
 
 
 def get_passwords(amount: int) -> str:
