@@ -16,7 +16,7 @@ def get_password(minimum: int = 15, maximum: int = 20) -> str:
 
 def get_passwords(amount: int) -> str:
     """ Generate multiple passwords. """
-    return "\n".join(get_password() for _ in range(amount))
+    return "\n".join(get_password() for _ in range(amount)) + "\n"
 
 
 def save_password(passwords: str, path: str) -> None:
